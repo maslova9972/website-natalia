@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #050505;
+  --panel: rgba(255, 255, 255, 0.05);
+  --panel-strong: rgba(255, 255, 255, 0.09);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.7);
+  --accent: #ff3b30;
+  --accent-2: #16d9d2;
+  --ring: rgba(22, 217, 210, 0.38);
+
+  color: var(--text);
+  background: var(--bg);
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Manrope, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(900px 360px at 4% 0%, rgba(255, 59, 48, 0.14), transparent 64%),
+    radial-gradient(720px 320px at 96% 3%, rgba(22, 217, 210, 0.16), transparent 64%),
+    var(--bg);
+}
+
+/* small, intentional global defaults */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+.font-display {
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+}
+
+::selection {
+  background: rgba(255, 59, 48, 0.3);
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease-out both;
+}
+
+.fade-up-delay {
+  animation: fadeUp 0.9s ease-out both;
+}
+
+.subtle-glow {
+  animation: subtleGlow 4s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtleGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(22, 217, 210, 0);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(22, 217, 210, 0.16);
+  }
+}
